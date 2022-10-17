@@ -2,7 +2,6 @@ import numpy as np
 import h5py
 import pylab as pl
 import matplotlib.image as mpimg
-from scipy.interpolate import interp1d
 # Read original images
 img = mpimg.imread('trainimg_H_x9-01.png')
 img2 = mpimg.imread('trainimg_Q_x9-01.png')

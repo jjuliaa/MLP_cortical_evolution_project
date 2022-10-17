@@ -1,6 +1,5 @@
 # Read and code colors from bitmaps
 import numpy as np
-from PIL import Image
 import h5py
 import matplotlib.image as mpimg
 
