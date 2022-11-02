@@ -4,7 +4,7 @@ import pylab as pl
 import matplotlib.image as mpimg
 # Read original images
 img = mpimg.imread('trainimg_H_x9-01.png')
-img2 = mpimg.imread('trainimg_Q_x9-01.png')
+img2 = mpimg.imread('trainimg_H8_RM_x9-01.png')
 
 
 x = h5py.File('/Users/julialc4/Desktop/MLP/b2/logs/out.h5', 'r')
@@ -74,8 +74,8 @@ print("x2:", x2)
 #y3 = np.ones(int(np.max(y1))+1)
 
 #How to do this?
-x3 = x1
-y3 = y1
+x3 = x2
+y3 = y2
 
 Y3 = np.ones([int(np.max(x3))+1, int(np.max(y3))+1, 3])
 for i in range(len(x3)):
@@ -93,8 +93,8 @@ OutNodeC2 = x['outputC2'][:]
 OutNodeC3 = x['outputC3'][:]
 
 #How to do this?
-x4 = x1
-y4 = y1
+x4 = x2
+y4 = y2
 
 Y4 = np.ones([int(np.max(x4))+1, int(np.max(y4))+1, 3])
 for i in range(len(x3)):
@@ -106,7 +106,7 @@ Y4 = np.transpose(Y4, [1,0,2]) #swap x, y
 
 F = pl.figure()
 f = F.add_subplot(241)
-f.set_xlabel('Error \n T: 10000000, nJ: 15, nQ: 15, lRate: 0.03')
+f.set_xlabel('Error \n T: 1000000, nJ: 15, nQ: 15, lRate: 0.02')
 f.plot(smooth(Error, 3333))
 f = F.add_subplot(243)
 f.set_xlabel('1st map')
@@ -121,10 +121,10 @@ f = F.add_subplot(246)
 f.set_xlabel('2nd map original')
 f.imshow(img2)
 f = F.add_subplot(247)
-f.set_xlabel('interp map: ancestor (x1, y1)')
+f.set_xlabel('interp map: ancestor (x2, y2)')
 f.imshow(Y3)
 f = F.add_subplot(248)
-f.set_xlabel('interp map: progeny (x1, y1) ')
+f.set_xlabel('interp map: progeny (x2, y2) ')
 f.imshow(Y4)
 
 pl.show()

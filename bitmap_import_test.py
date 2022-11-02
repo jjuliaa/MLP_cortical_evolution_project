@@ -25,8 +25,9 @@ def color_code(img):
 
 # Read Images
 img = mpimg.imread('trainimg_H_x9-01.png')
-img2 = mpimg.imread('trainimg_Q_x9-01.png')
-img3 = mpimg.imread('trainimg_FB_x9-01.png')
+#img2 = mpimg.imread('trainimg_Q_x9-01.png')
+img2 = mpimg.imread('trainimg_H8_RM_x9-01.png')
+img3 = mpimg.imread('trainimg_H8_RM_x9-01.png')
 print("----img shapes:----")
 print(img.shape)
 print(img2.shape)
@@ -47,6 +48,7 @@ img3coded = color_code(img3)
 
 np.savez('img1.npz', X=imgcoded)
 np.savez('img2.npz', X=img2coded)
+np.savez('img3.npz', X=img3coded)
 #np.savez('img2.npz', X=img2coded)
 
 datax1 = imgcoded[0]
