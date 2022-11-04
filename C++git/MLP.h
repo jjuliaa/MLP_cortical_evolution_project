@@ -149,6 +149,7 @@ public:
             for (int i = 0; i < outputDeltas.size(); i++){
                 Error += outputDeltas[i] * outputDeltas[i];
             }
+            //TODO: in here could there be, if error = 0 set T generations to 0?
             Errors.push_back(Error);
     
         }
