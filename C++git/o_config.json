@@ -1,0 +1,6 @@
+{
+    "T"  : 10000000,
+    "nHiddenJ" : 15,
+    "nHiddenQ" : 15,
+    "learningRate": 0.03
+}

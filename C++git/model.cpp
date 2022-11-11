@@ -99,16 +99,15 @@ int main(int argc, char **argv){
     std::ofstream logfile;
     morph::Tools::createDir (logpath);
     { std::stringstream ss; ss << logpath << "/log.txt"; logfile.open(ss.str());}
-    logfile<<"Hello."<<std::endl;
+    logfile<<"Hello World."<<std::endl;
     
     int T = conf.getInt("T", 1000);
     int nHiddenJ = conf.getInt("nHiddenJ", 3);
     int nHiddenQ = conf.getInt("nHiddenQ", 3);
-    int learningRate = conf.getFloat("learningRate", 0.03);
+    //int learningRate = conf.getFloat("learningRate", 0.03);
     //to run: ./model ../config.json logs
     
     MLP M(2,nHiddenJ,nHiddenQ,3);
-    
     
     //Image Training:
     for (int t = 0; t<T; t++){
@@ -160,8 +159,6 @@ int main(int argc, char **argv){
     
     
     std::cout<<"Finished Training"<<std::endl;
-    
-    //Testing for Nmaps
     
     
     // Testing map 1
@@ -335,8 +332,3 @@ int main(int argc, char **argv){
     return 0;
     
 }
-
-
-
-
-
